@@ -17,15 +17,25 @@ public class Calculatedaysbtw2dates {
 		int date1 = sc.nextInt();
 		int month1 = sc.nextInt();
 		int year1 = sc.nextInt();
+		
+		// if  first date appears after second date 
+		if(year1<year || (year==year1 && month>month1) ||(year==year1 && month==month1 && date>date1)) {
+			System.out.println("Inputs are invalid");
+			System.exit(0);
+		}
+
+//		if month year date all are same
 		if (year == year1 && month == month1 && date == date1) {
 			System.out.println(day);
 			System.exit(0);
 		}
+		//if month and year are same
 		if (year == year1 && month == month1) {
 			day = day + (date1 - date);
 			System.out.println("no of day in a given month " + day);
 			System.exit(0);
 		}
+		//if only year same
 		if (year == year1) {
 
 			if (month != 2) {
@@ -58,6 +68,7 @@ public class Calculatedaysbtw2dates {
 			System.exit(0);
 		}
 
+		// if year are different
 		if (month != 2) {
 			day = day + (m[month - 1] - date);
 		} else {
